@@ -7,7 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../../public/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../public/css/style.css">
+    <script language="javascript" src="../../public/js/jquery-3.2.1.min.js"></script>
+    <script language="javascript" src="../../public/js/bootstrap.min.js"></script>
 
+    </script>
   </head>
   <body>
 
@@ -19,7 +22,7 @@
               <h4 style="text-align:center">LOGIN</h4>
             </div>
             <div class="panel-body">
-              <form class="form-group" action="#" method="post">
+              <form class="form-group" action="../models/login.php" method="post">
                 <input class="form-control" id="username" type="text" name="username" value="" placeholder="Username..">
                 <input class="form-control" id="password" type="password" name="password" value="" placeholder="Password..">
                 <input type="checkbox" name="remember_pass" value=""> Nhớ mật khẩu?<br>
@@ -33,8 +36,6 @@
         </div>
       </div>
     </div>
-
-    <script src="../../public/js/jquery-3.2.1.min.js"></script>
-    <script src="../../public/js/bootstrap.min.js"></script>
+    
   </body>
 </html>

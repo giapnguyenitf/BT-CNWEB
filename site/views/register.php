@@ -19,7 +19,7 @@
               <h4 style="text-align:center">Register</h4>
             </div>
             <div class="panel-body">
-              <form class="form-group" name="register_form" action="index.html" method="post">
+              <form class="form-group" name="register_form" action="../controllers/register.php" method="post">
                 <input class="form-control" type="text" name="username" value="" placeholder="Username..">
                 <input class="form-control" type="password" name="password" value="" placeholder="Password..">
                 <input class="form-control" type="password" name="confirm_password" value="" placeholder="Confirm Password..">

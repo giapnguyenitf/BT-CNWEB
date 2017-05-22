@@ -22,9 +22,9 @@
               <h4 style="text-align:center">LOGIN</h4>
             </div>
             <div class="panel-body">
-              <form class="form-group" action="../models/login.php" method="post">
-                <input class="form-control" id="username" type="text" name="username" value="" placeholder="Username..">
-                <input class="form-control" id="password" type="password" name="password" value="" placeholder="Password..">
+              <form class="form-group" action="../controllers/login.php" method="post">
+                <input class="form-control" id="username" type="text" name="username" value="" placeholder="Username.." required="Username is required">
+                <input class="form-control" id="password" type="password" name="password" value="" placeholder="Password.." required="Password is required!">
                 <input type="checkbox" name="remember_pass" value=""> Nhớ mật khẩu?<br>
                 <input class="form-control btn btn-primary" type="submit" name="bt_submit" value="Login">
               </form>
@@ -36,6 +36,6 @@
         </div>
       </div>
     </div>
-    
+
   </body>
 </html>

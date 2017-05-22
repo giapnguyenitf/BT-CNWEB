@@ -9,8 +9,7 @@ session_start();
   </head>
   <body>
     <?php
-      require_once("../../system/library/connection.php");
-
+    require_once("../models/query.php");
       if(isset($_POST['bt_submit'])){
         $username = $_POST['username'];
         $password = $_POST['password'];
@@ -19,13 +18,16 @@ session_start();
 		    $password = strip_tags($password);
 		    $password = addslashes($password);
 
-      
+        if(check_account($username,$password)){
+          $_SESSION['username'] = $username;
+          header('Location:../views/index.php');
+        }else {
+          header('Location:../views/login.php');
+        }
+
       }
 
 
      ?>
-     <script type="text/javascript">
-
-     </script>
   </body>
 </html>

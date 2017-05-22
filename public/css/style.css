@@ -14,3 +14,24 @@ form>input{
 #register-box{
   margin-top: 100px;
 }
+
+.active{
+  background: #fff !important;
+}
+
+.page-header{
+    margin-top: 20px !important;
+}
+
+.my-input-form{
+    margin-top: -50px !important;
+}
+
+.checkbox{
+    margin-top: 0px !important;
+}
+
+.my-button{
+    padding-left: 30px;
+    padding-right: 30px;
+}

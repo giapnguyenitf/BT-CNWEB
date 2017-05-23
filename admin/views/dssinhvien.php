@@ -7,6 +7,7 @@
   <body>
     <?php
     include 'share-layout.php';
+    include '../controllers/get_list_sv.php';
     ?>
     <div id="page-wrapper">
       <div class="row">
@@ -15,64 +16,42 @@
         </div>
       </div>
       <div class="row">
-        <table class="table table-hover my-table">
-          <tr>
-            <th>
-              <p>MSSV</p>
-            </th>
-            <th>
-              <p>Họ tên</p>
-            </th>
-            <th>
-              <p>Giới tính</p>
-            </th>
-            <th>
-              <p>Ngày sinh</p>
-            </th>
-            <th>
-              <p>Email</p>
-            </th>
-            <th>
-              <p>SĐT</p>
-            </th>
-            <th>
-              <p>Lớp</p>
-            </th>
-            <th>
-              <div class="checkbox">
-                <input type="checkbox">
-              </div>
-            </th>
-          </tr>
+        <table class="table table-bordered table-striped my-table">
+          <thead>
+            <tr>
+              <th>STT</th>
+              <th>MSSV</th>
+              <th>Họ tên</th>
+              <th>Giới tính</th>
+              <th>Ngày sinh</th>
+              <th>Email</th>
+              <th>SĐT</th>
+              <th>Lớp</th>
+              <th>Mark</th>
+            </tr>
+          </thead>
 
-          <tr>
-            <td>
-              102130033
-            </td>
-            <td>
-              Huỳnh Hoàng Phúc
-            </td>
-            <td>
-              Nam (thẳng)
-            </td>
-            <td>
-              12/03/1995
-            </td>
-            <td>
-              tichuotuglyboy@gmail.com
-            </td>
-            <td>
-              0985756430
-            </td>
-            <td>
-              13T1
-            </td>
-            <td>
-              <div class="checkbox">
-                <input type="checkbox">
-              </div>
-            </td>
-          </tr>
+          <tbody>
+            <?php $i=1; foreach ($arr as $item) {?>
+            <tr>
+              <td><?php echo $i++; ?></td>
+              <td><?php echo $item['mssv']; ?></td>
+              <td><?php echo $item['hoten']; ?></td>
+              <td><?php
+                if($item['gioitinh']){
+                  echo 'Nam';
+                }else{
+                  echo 'Nữ';
+                }
+              ?></td>
+              <td><?php echo $item['ngaysinh']; ?></td>
+              <td><?php echo $item['email']; ?></td>
+              <td><?php echo $item['sdt']; ?></td>
+              <td><?php echo $item['lop']; ?></td>
+              <td><?php $count=0; echo "<input type='checkbox' name='$count++' value=''>"; ?></td>
+            </tr>
+          <?php } ?>
+          </tbody>
         </table>
       </div>
       <div class="row" style="text-align: center;">

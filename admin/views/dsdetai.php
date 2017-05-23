@@ -7,6 +7,7 @@
   <body>
     <?php
     include 'share-layout.php';
+    include '../controllers/get_list_detai.php'
     ?>
     <div id="page-wrapper">
       <div class="row">
@@ -15,40 +16,35 @@
         </div>
       </div>
       <div class="row">
-        <table class="table table-hover my-table">
-          <tr>
-            <th>
-              <p>ID đề tài</p>
-            </th>
-            <th>
-              <p>Tên đề tài</p>
-            </th>
-            <th>
-              <p>Đồ án</p>
-            </th>
-            <th>
-              <div class="checkbox">
-                <input type="checkbox">
-              </div>
-            </th>
-          </tr>
+        <table class="table table-bordered table-striped my-table">
+          <thead>
+            <tr>
+              <th>
+                <p>ID đề tài</p>
+              </th>
+              <th>
+                <p>Tên đề tài</p>
+              </th>
+              <th>
+                <p>Đồ án</p>
+              </th>
+              <th>
+                <p>Mark</p>
+              </th>
+            </tr>
+          </thead>
 
-          <tr>
-            <td>
-              1
-            </td>
-            <td>
-              Xây dựng ứng dụng gõ tắt
-            </td>
-            <td>
-              Cơ sở ngành mạng
-            </td>
-            <td>
-              <div class="checkbox">
-                <input type="checkbox">
-              </div>
-            </td>
-          </tr>
+          <tbody>
+            <?php foreach ($arr as $item) {?>
+            <tr>
+              <td><?php echo $item['iddetai']; ?></td>
+              <td><?php echo $item['tendetai']; ?></td>
+              <td><?php echo $item['tendoan']; ?></td>
+              <td><?php $count=0; echo "<input type='checkbox' name='$count++' value=''>"; ?></td>
+            </tr>
+          <?php } ?>
+          </tbody>
+
         </table>
       </div>
       <div class="row" style="text-align: center;">

@@ -7,6 +7,7 @@
   <body>
     <?php
     include 'share-layout.php';
+    include '../controllers/get_list_khoa.php';
     ?>
     <div id="page-wrapper">
       <div class="row">
@@ -15,7 +16,8 @@
         </div>
       </div>
       <div class="row">
-        <table class="table table-hover my-table">
+        <table class="table table-bordered table-striped my-table">
+        <thead>
           <tr>
             <th>
               <p>ID khoa</p>
@@ -23,26 +25,17 @@
             <th>
               <p>Tên khoa</p>
             </th>
-            <th>
-              <div class="checkbox">
-                <input type="checkbox">
-              </div>
-            </th>
           </tr>
+        </thead>
 
+        <tbody>
+          <?php foreach ($arr as $item) {?>
           <tr>
-            <td>
-              1
-            </td>
-            <td>
-              Công nghệ thông tin
-            </td>
-            <td>
-              <div class="checkbox">
-                <input type="checkbox">
-              </div>
-            </td>
+            <td><?php echo $item['idkhoa']; ?></td>
+            <td><?php echo $item['tenkhoa']; ?></td>
           </tr>
+        <?php } ?>
+        </tbody>
         </table>
       </div>
     </div>

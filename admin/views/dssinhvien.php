@@ -36,7 +36,7 @@
 
           <tbody>
             <?php $i=1; foreach ($arr as $item) {?>
-            <form <?php echo "id="."form_".$i;?> <?php echo "action='suasinhvien.php?mssv=".$item['mssv']."'";  ?>  method="get">
+            <form <?php echo "id="."form_".$i;?> method="get">
               <tr>
                 <td><?php echo $i; ?></td>
                 <td><?php echo "<input readonly type='text' style='border:none;background:none;' name='mssv' value='".$item['mssv']."'>"; ?></td>
@@ -51,20 +51,15 @@
                 <td><?php echo $item['ngaysinh']; ?></td>
                 <td><?php echo $item['email']; ?></td>
                 <td><?php echo $item['sdt']; ?></td>
-                <td><?php echo $item['lop']; ?></td>
-                <td><?php
-                  echo "<button style='background: none;border:none;' type='submit' name='bt_submit'><i style='margin-left:10px;' class='fa fa-pencil' aria-hidden='true'></i></button>";
-                  echo "<button style='background: none;border:none;' data-toggle='modal' data-target='#xoaModal' type='button' name='bt_delete' id='bt_delete'><i style='margin-left:10px;color:red;' class='fa fa-trash' aria-hidden='true'></i></button>";
-                  $i++;
-                 ?></td>
-
+                <td><?php echo $item['lop'];$i++; ?></td>
+                <?php  echo "<td><a href=\"suasinhvien.php?mssv=$item[mssv]\"><i style='margin-left:10px;' class='fa fa-pencil' aria-hidden='true'></i></a><a href=\"../controllers/delete_sv.php?mssv=$item[mssv]\" onClick=\"return confirm('Are you sure you want to delete?')\"><i style='margin-left:10px;color:red;' class='fa fa-trash' aria-hidden='true'></i></a></td>"; ?>
               </tr>
             </form>
           <?php } ?>
           </tbody>
         </table>
       </div>
-      
+
       <div class="modal fade" id="xoaModal" role="dialog">
         <div class="modal-dialog">
           <!-- Modal content-->

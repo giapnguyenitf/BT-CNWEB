@@ -7,57 +7,41 @@
   <body>
     <?php
     include 'share-layout.php';
+    include '../controllers/get_list_detai.php';
     ?>
     <div id="page-wrapper">
       <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-10">
           <h1 class="page-header">Danh sách đề tài</h1>
+        </div>
+        <div class="col-md-2">
+          <button type="button" style="margin-top:20px;" class="btn btn-success my-button" onclick="window.location='themdetai.php'">Thêm</button>
         </div>
       </div>
       <div class="row">
-        <table class="table table-hover my-table">
-          <tr>
-            <th>
-              <p>ID đề tài</p>
-            </th>
-            <th>
-              <p>Tên đề tài</p>
-            </th>
-            <th>
-              <p>Đồ án</p>
-            </th>
-            <th>
-              <div class="checkbox">
-                <input type="checkbox">
-              </div>
-            </th>
-          </tr>
+        <table class="table table-bordered table-striped my-table">
+          <thead>
+            <tr>
+              <th>ID đề tài</th>
+              <th>Tên đề tài</th>
+              <th>Đồ án</th>
+              <th>Options</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php $i=1; foreach ($arr as $item) {?>
+            <form <?php echo "id="."form_".$i;?> action= "#"  method="get">
+              <tr>
+                <td><?php echo "<input readonly type='text' style='border:none;background:none;' name='iddetai' value='".$item['iddetai']."'>"; ?></td>
+                <td><?php echo $item['tendetai']; ?></td>
+                <td><?php echo $item['tendoan']; ?></td>
+                <?php  echo "<td><a href=\"suadetai.php?iddetai=$item[iddetai]\"><i style='margin-left:10px;' class='fa fa-pencil' aria-hidden='true'></i></a><a href=\"../controllers/delete_detai.php?iddetai=$item[iddetai]\" onClick=\"return confirm('Are you sure you want to delete?')\"><i style='margin-left:10px;color:red;' class='fa fa-trash' aria-hidden='true'></i></a></td>"; ?>
+              </tr>
+            </form>
+          <?php } ?>
+          </tbody>
 
-          <tr>
-            <td>
-              1
-            </td>
-            <td>
-              Xây dựng ứng dụng gõ tắt
-            </td>
-            <td>
-              Cơ sở ngành mạng
-            </td>
-            <td>
-              <div class="checkbox">
-                <input type="checkbox">
-              </div>
-            </td>
-          </tr>
         </table>
-      </div>
-      <div class="row" style="text-align: center;">
-        <button type="button" class="btn btn-success my-button" onclick="window.location='themdetai.php'">Thêm</button>
-        <form action="suadetai.php" data-ajax="true" data-ajax-mode="replace" data-ajax-update="#divInterestDeatils" id="form0" method="post" style="display: inline-block">                <div id="divInterestDeatils"></div>
-          <input type="hidden" name="ma-phim" />
-          <button type="submit" class="btn btn-warning my-button">Sửa</button>
-        </form>
-        <button type="button" class="btn btn-danger my-button" data-toggle="modal" data-target="#xoaModal">Xoá</button>
       </div>
       <div class="modal fade" id="xoaModal" role="dialog">
         <div class="modal-dialog">

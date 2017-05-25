@@ -18,6 +18,8 @@
     <link href="../../public/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <link rel="stylesheet" href="../../public/css/style.css">
+    <script language="javascript" src="../../public/js/jquery-3.2.1.min.js"></script>
+
   </head>
   <body>
     <!-- Navigation -->
@@ -29,7 +31,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">SB Admin v2.0</a>
+        <a class="navbar-brand" href="#">QUẢN LÝ ĐỒ ÁN SV</a>
       </div>
       <!-- /.navbar-header -->
 

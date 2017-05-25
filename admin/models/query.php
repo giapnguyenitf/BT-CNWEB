@@ -73,12 +73,47 @@ require_once("connection.php");
   }
 
   function delete_detai($iddetai){
-
     global $conn;
     $sql = "DELETE FROM detai  WHERE detai.iddetai = $iddetai";
     $result = mysqli_query($conn,$sql);
     mysqli_close($conn);
 
     return $result;
+  }
+
+  function update_detai($iddetai,$tendetai){
+    global $conn;
+    $sql = "UPDATE detai SET tendetai='$tendetai' WHERE iddetai='$iddetai'";
+    $result = mysqli_query($conn,$sql);
+    mysqli_close($conn);
+
+    return $result;
+  }
+
+  function update_sv($mssv,$hoten,$gioitinh,$ngaysinh,$email,$sdt,$lop){
+    global $conn;
+    $sql = "UPDATE sinhvien SET hoten='$hoten',gioitinh='$gioitinh',ngaysinh='$ngaysinh',email='$email',sdt='$sdt',lop='$lop' WHERE mssv=$mssv";
+    $result = mysqli_query($conn,$sql);
+    mysqli_close($conn);
+
+    return $result;
+  }
+
+  function add_sv($mssv,$hoten,$gioitinh,$ngaysinh,$email,$sdt,$lop){
+    global $conn;
+    $sql = "INSERT INTO sinhvien(mssv,hoten,gioitinh,ngaysinh,email,sdt,lop) VALUES ('$mssv','$hoten',$gioitinh,'$ngaysinh','$email','$sdt','$lop')";
+    $result = mysqli_query($conn,$sql);
+    mysqli_close($conn);
+
+    return $result;
+  }
+
+  function add_detai($tendetai,$iddoan){
+    global $conn;
+    $sql = "INSERT INTO detai(tendetai,iddoan) VALUES ('$tendetai','$iddoan')";
+    $result =  mysqli_query($conn,$sql);
+
+    return $result;
+
   }
  ?>

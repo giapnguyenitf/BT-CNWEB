@@ -18,20 +18,22 @@
         <div class="col-md-4 col-md-offset-4 my-input-form">
           <div class="login-panel panel panel-default">
             <div class="panel-body">
-              <form action="#" method="post">
+              <form action="../controllers/add_detai.php" method="post">
                 <fieldset>
                   <div class="form-group">
-                    <input autofocus="autofocus" class="form-control" id="tenDeTai" name="ten-de-tai" placeholder="Tên đề tài" type="text"/>
+                    <input autofocus="autofocus" class="form-control"  name="tendetai" placeholder="Tên đề tài" type="text"/>
                   </div>
                   <div class="form-group">
-                    <select class="form-control" id="TheLoai" name="TheLoai"><option value="">---Đồ án---</option>
-                      <option>Cơ sở ngành mạng</option>
-                      <option>Phân tích thiết kế giải thuật</option>
-                      <option>Lập trình hệ thống</option>
+                    <select class="form-control" name="iddoan">
+                      <option value="2">Đồ án Giải thuật &#38; Lập trình</option>
+                      <option value="3">Đồ án Lập trình HT &#38; Vi điều khiển</option>
+                      <option value="4">Đồ án P.Tích &#38; T.Kế H.Thống thông tin</option>
+                      <option value="5">Đồ án Cơ sở ngành mạng</option>
+                      <option value="6">Đồ án chuyên ngành CNPM</option>
                     </select>
                   </div>
                   <div class="form-group" style="text-align: center; margin-bottom: 0px !important;">
-                    <input type="submit" class="btn btn-lg btn-success my-button" value="Thêm đề tài">
+                    <input type="submit" name="bt_submit" class="btn btn-lg btn-success my-button" value="Thêm đề tài">
                     <input type="button" class="btn btn-lg my-button" value="Reset">
                   </div>
                 </fieldset>

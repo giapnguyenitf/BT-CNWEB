@@ -5,8 +5,7 @@ $result = delete_sv($mssv);
 if($result){
   header("Location: ../views/dssinhvien.php");
 }else{
-  return confirm ('Cannot delete this SV!');
+  header("Location:../view/dssinhvien.php");
 }
-
 
  ?>

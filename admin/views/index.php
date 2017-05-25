@@ -73,7 +73,7 @@
                 </div>
               </div>
             </div>
-            <a href="dskhoa">
+            <a href="dskhoa.php">
               <div class="panel-footer">
                 <span class="pull-left">Xem chi tiết!</span>
                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>

@@ -19,37 +19,45 @@
         <div class="col-md-4 col-md-offset-4 my-input-form">
           <div class="login-panel panel panel-default">
             <div class="panel-body">
-              <form action="../controllers/get_editted_sv.php" method="post">
+              <form action="../controllers/update_sv.php" method="post">
                 <fieldset>
                   <div class="form-group">
-                    <?php echo "<input autofocus='autofocus' class='form-control' id='mssv' name='mssv' value='".$arr['mssv']."'"." placeholder='MSSV' type='text' readonly/>"; ?>
+                    <?php echo "<input class='form-control' id='mssv' name='mssv' value='".$arr['mssv']."'"." placeholder='MSSV' type='text' readonly/>"; ?>
                   </div>
                   <div class="form-group">
                     <?php echo "<input autofocus='autofocus' class='form-control' id='hoten' name='hoten' value='".$arr['hoten']."'"."type='text'/>"; ?>
                   </div>
                   <div class="form-group">
 
-                  <form>
-                    <label class="radio-inline">
-                      <input type="radio" name="optradio" <?php echo($arr['gioitinh']?'checked="checked"':''); ?> >Nam
-                    </label>
-                    <label class="radio-inline">
-                      <input type="radio" name="optradio" <?php echo(!$arr['gioitinh']?'checked="checked"':''); ?> >Nữ
-                    </label>
-                  </form>
+                  <label class="radio-inline">
+                    <input  type="radio" id="male" name="male" onclick="checked_male()" <?php echo($arr['gioitinh']?'checked="checked"':''); ?> >Nam
+                  </label>
+                  <label class="radio-inline">
+                    <input  type="radio" id="female" name="female" onclick="checked_female()" <?php echo(!$arr['gioitinh']?'checked="checked"':''); ?> >Nữ
+                  </label>
+                  <input type="hidden" id="gioitinh" name="gioitinh" <?php echo "value='".$arr['gioitinh']."'" ?>>
+                  <script type="text/javascript">
+                    function checked_male(){
+                      document.getElementById('male').checked = true;
+                      document.getElementById('female').checked=false;
+                      document.getElementById('gioitinh').value=true;
+                    }
+
+                    function checked_female(){
+                      document.getElementById('male').checked = false;
+                      document.getElementById('female').checked=true;
+                      document.getElementById('gioitinh').value=false;
+                    }
+                  </script>
+
                   </div>
                   <div class="form-group">
                     <div class='input-group date' id='datetimepicker1'>
-                    <input type='text' class="form-control" />
+                    <?php echo "<input class='form-control' id='ngaysinh' name='ngaysinh' value='".$arr['ngaysinh']."'"."type='text'/>";?>
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>
                     </div>
-                    <script type="text/javascript">
-                            $(function () {
-                                $('#datetimepicker1').datetimepicker();
-                            });
-                    </script>
                   </div>
                   <div class="form-group">
                     <?php echo "<input autofocus='autofocus' class='form-control' id='email' name='email' value='".$arr['email']."'"."type='email'/>"; ?>
@@ -61,7 +69,7 @@
                     <?php echo "<input autofocus='autofocus' class='form-control' id='lop' name='lop' value='".$arr['lop']."'"."type='text'/>"; ?>
                   </div>
                   <div class="form-group" style="text-align: center; margin-bottom: 0px !important;">
-                    <input type="submit" class="btn btn-lg btn-success my-button" value="Save">
+                    <input type="submit" name="bt_submit" class="btn btn-lg btn-success my-button" value="Save">
                     <input type="button" class="btn btn-lg my-button" value="Reset">
                   </div>
                 </fieldset>

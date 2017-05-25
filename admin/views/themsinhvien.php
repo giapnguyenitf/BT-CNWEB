@@ -47,7 +47,7 @@
                   });
                   </script>
                   <div class="form-group">
-                    <input autofocus="autofocus" class="form-control" id="email" name="email" placeholder="Email" type="text"/>
+                    <input autofocus="autofocus" class="form-control" id="email" name="email" placeholder="Email" type="email"/>
                   </div>
                   <div class="form-group">
                     <input autofocus="autofocus" class="form-control" id="sdt" name="sdt" placeholder="Số điện thoại" type="text"/>

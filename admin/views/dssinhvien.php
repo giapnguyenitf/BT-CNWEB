@@ -11,8 +11,11 @@
     ?>
     <div id="page-wrapper">
       <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-10">
           <h1 class="page-header">Danh sách sinh viên</h1>
+        </div>
+        <div class="col-md-2">
+          <button type="button" style="margin-top:20px;" class="btn btn-success my-button" onclick="window.location='themsinhvien.php'">Thêm</button>
         </div>
       </div>
       <div class="row">
@@ -27,45 +30,43 @@
               <th>Email</th>
               <th>SĐT</th>
               <th>Lớp</th>
-              <th>Mark</th>
+              <th>Options</th>
             </tr>
           </thead>
 
           <tbody>
             <?php $i=1; foreach ($arr as $item) {?>
-            <tr>
-              <td><?php echo $i++; ?></td>
-              <td><?php echo $item['mssv']; ?></td>
-              <td><?php echo $item['hoten']; ?></td>
-              <td><?php
-                if($item['gioitinh']){
-                  echo 'Nam';
-                }else{
-                  echo 'Nữ';
-                }
-              ?></td>
-              <td><?php echo $item['ngaysinh']; ?></td>
-              <td><?php echo $item['email']; ?></td>
-              <td><?php echo $item['sdt']; ?></td>
-              <td><?php echo $item['lop']; ?></td>
-              <td><?php $count=0; echo "<input type='checkbox' name='$count++' value=''>"; ?></td>
-            </tr>
+            <form <?php echo "id="."form_".$i;?> <?php echo "action='suasinhvien.php?mssv=".$item['mssv']."'";  ?>  method="get">
+              <tr>
+                <td><?php echo $i; ?></td>
+                <td><?php echo "<input readonly type='text' style='border:none;background:none;' name='mssv' value='".$item['mssv']."'>"; ?></td>
+                <td><?php echo $item['hoten']; ?></td>
+                <td><?php
+                  if($item['gioitinh']){
+                    echo 'Nam';
+                  }else{
+                    echo 'Nữ';
+                  }
+                ?></td>
+                <td><?php echo $item['ngaysinh']; ?></td>
+                <td><?php echo $item['email']; ?></td>
+                <td><?php echo $item['sdt']; ?></td>
+                <td><?php echo $item['lop']; ?></td>
+                <td><?php
+                  echo "<button style='background: none;border:none;' type='submit' name='bt_submit'><i style='margin-left:10px;' class='fa fa-pencil' aria-hidden='true'></i></button>";
+                  echo "<button style='background: none;border:none;' data-toggle='modal' data-target='#xoaModal' type='button' name='bt_delete' id='bt_delete'><i style='margin-left:10px;color:red;' class='fa fa-trash' aria-hidden='true'></i></button>";
+                  $i++;
+                 ?></td>
+
+              </tr>
+            </form>
           <?php } ?>
           </tbody>
         </table>
       </div>
-      <div class="row" style="text-align: center;">
-        <button type="button" class="btn btn-success my-button" onclick="window.location='themsinhvien.php'">Thêm</button>
-        <form action="suasinhvien.php" data-ajax="true" data-ajax-mode="replace" data-ajax-update="#divInterestDeatils" id="form0" method="post" style="display: inline-block">
-          <div id="divInterestDeatils"></div>
-          <input type="hidden" name="ma-phim" />
-          <button type="submit" class="btn btn-warning my-button">Sửa</button>
-        </form>
-        <button type="button" class="btn btn-danger my-button" data-toggle="modal" data-target="#xoaModal">Xoá</button>
-      </div>
+      
       <div class="modal fade" id="xoaModal" role="dialog">
         <div class="modal-dialog">
-
           <!-- Modal content-->
           <div class="modal-content">
             <div class="modal-header">
@@ -73,7 +74,7 @@
               <h4 class="modal-title">Cảnh báo!</h4>
             </div>
             <div class="modal-body">
-              <p>sinh viên đã được chọn sẽ bị xoá. Bạn có muốn tiếp tục?</p>
+              <p>Sinh viên đã được chọn sẽ bị xoá. Bạn có muốn tiếp tục?</p>
             </div>
             <div class="modal-footer">
               <form action="#" data-ajax="true" data-ajax-mode="replace" data-ajax-update="#divInterestDeatils" id="form1" method="post" style="display: inline-block">                            <div id="divInterestDeatils"></div>

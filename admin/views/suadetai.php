@@ -6,6 +6,7 @@
   <body>
     <?php
     include 'share-layout.php';
+    include '../controllers/get_edited_detai.php';
     ?>
     <div id="page-wrapper">
       <div class="row">
@@ -15,23 +16,22 @@
       </div>
       <!-- /.row -->
       <div class="row">
-        <div class="col-md-4 col-md-offset-4 my-input-form">
+        <div class="col-md-8 col-md-offset-2 my-input-form">
           <div class="login-panel panel panel-default">
             <div class="panel-body">
               <form action="#" method="post">
                 <fieldset>
                   <div class="form-group">
-                    <input autofocus="autofocus" class="form-control" id="tenDeTai" name="ten-de-tai" placeholder="Tên đề tài" type="text"/>
+                    <?php echo "<input autofocus='autofocus' class='form-control' id='iddetai' name='iddetai' value='".$arr['iddetai']."'"."  type='text' readonly/>"; ?>
                   </div>
                   <div class="form-group">
-                    <select class="form-control" id="TheLoai" name="TheLoai"><option value="">---Đồ án---</option>
-                      <option>Cơ sở ngành mạng</option>
-                      <option>Phân tích thiết kế giải thuật</option>
-                      <option>Lập trình hệ thống</option>
-                    </select>
+                    <?php echo "<input autofocus='autofocus' class='form-control' id='tendetai' name='tendetai' value='".$arr['tendetai']."'"."  type='text'/>"; ?>
+                  </div>
+                  <div class="form-group">
+                    <?php echo "<input autofocus='autofocus' class='form-control' id='tendoan' name='tendoan' value='".$arr['tendoan']."'"."  type='text' readonly/>"; ?>
                   </div>
                   <div class="form-group" style="text-align: center; margin-bottom: 0px !important;">
-                    <input type="submit" class="btn btn-lg btn-success my-button" value="Sửa đề tài">
+                    <input type="submit" class="btn btn-lg btn-success my-button" value="Save">
                     <input type="button" class="btn btn-lg my-button" value="Reset">
                   </div>
                 </fieldset>

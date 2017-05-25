@@ -45,4 +45,40 @@ require_once("connection.php");
 
     return $result;
   }
+
+  function get_info_sv($mssv){
+    global $conn;
+    $sql = "SELECT * FROM sinhvien WHERE  sinhvien.mssv = $mssv ";
+    $result = mysqli_query($conn,$sql);
+    mysqli_close($conn);
+
+    return $result;
+  }
+
+  function get_info_detai($iddetai){
+    global $conn;
+    $sql = "SELECT detai.iddetai,detai.tendetai,doan.tendoan FROM detai,doan WHERE  detai.iddetai = $iddetai and detai.iddoan=doan.iddoan";
+    $result = mysqli_query($conn,$sql);
+    mysqli_close($conn);
+
+    return $result;
+  }
+
+  function delete_sv($mssv){
+    global $conn;
+    $sql = "DELETE FROM sinhvien WHERE sinhvien.mssv = $mssv";
+    $result = mysqli_query($conn,$sql);
+    mysqli_close($conn);
+    return $result;
+  }
+
+  function delete_detai($iddetai){
+
+    global $conn;
+    $sql = "DELETE FROM detai  WHERE detai.iddetai = $iddetai";
+    $result = mysqli_query($conn,$sql);
+    mysqli_close($conn);
+
+    return $result;
+  }
  ?>

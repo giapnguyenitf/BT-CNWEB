@@ -6,6 +6,7 @@
   <body>
     <?php
     include 'share-layout.php';
+    include '../controllers/get_edited_sv.php';
     ?>
     <div id="page-wrapper">
       <div class="row">
@@ -18,45 +19,49 @@
         <div class="col-md-4 col-md-offset-4 my-input-form">
           <div class="login-panel panel panel-default">
             <div class="panel-body">
-              <form action="#" method="post">
+              <form action="../controllers/get_editted_sv.php" method="post">
                 <fieldset>
                   <div class="form-group">
-                    <input autofocus="autofocus" class="form-control" id="mssv" name="mssv" placeholder="MSSV" type="text"/>
+                    <?php echo "<input autofocus='autofocus' class='form-control' id='mssv' name='mssv' value='".$arr['mssv']."'"." placeholder='MSSV' type='text' readonly/>"; ?>
                   </div>
                   <div class="form-group">
-                    <input autofocus="autofocus" class="form-control" id="hoTen" name="ho-ten" placeholder="Họ tên" type="text"/>
+                    <?php echo "<input autofocus='autofocus' class='form-control' id='hoten' name='hoten' value='".$arr['hoten']."'"."type='text'/>"; ?>
                   </div>
                   <div class="form-group">
-                    <select class="form-control" id="TheLoai" name="TheLoai">
-                      <option value="">---Giới tính---</option>
-                      <option>Nam</option>
-                      <option>Nữ</option>
-                    </select>
+
+                  <form>
+                    <label class="radio-inline">
+                      <input type="radio" name="optradio" <?php echo($arr['gioitinh']?'checked="checked"':''); ?> >Nam
+                    </label>
+                    <label class="radio-inline">
+                      <input type="radio" name="optradio" <?php echo(!$arr['gioitinh']?'checked="checked"':''); ?> >Nữ
+                    </label>
+                  </form>
                   </div>
                   <div class="form-group">
                     <div class='input-group date' id='datetimepicker1'>
-                      <input type='text' class="form-control" />
-                      <span class="input-group-addon">
+                    <input type='text' class="form-control" />
+                    <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
-                      </span>
+                    </span>
                     </div>
-                  </div>
-                  <script type="text/javascript">
-                  $(function () {
-                    $('#datetimepicker1').datetimepicker();
-                  });
-                  </script>
-                  <div class="form-group">
-                    <input autofocus="autofocus" class="form-control" id="email" name="email" placeholder="Email" type="text"/>
+                    <script type="text/javascript">
+                            $(function () {
+                                $('#datetimepicker1').datetimepicker();
+                            });
+                    </script>
                   </div>
                   <div class="form-group">
-                    <input autofocus="autofocus" class="form-control" id="sdt" name="sdt" placeholder="Số điện thoại" type="text"/>
+                    <?php echo "<input autofocus='autofocus' class='form-control' id='email' name='email' value='".$arr['email']."'"."type='email'/>"; ?>
                   </div>
                   <div class="form-group">
-                    <input autofocus="autofocus" class="form-control" id="lop" name="lop" placeholder="Lớp" type="text"/>
+                    <?php echo "<input autofocus='autofocus' class='form-control' id='sdt' name='sdt' value='".$arr['sdt']."'"."type='text'/>"; ?>
+                  </div>
+                  <div class="form-group">
+                    <?php echo "<input autofocus='autofocus' class='form-control' id='lop' name='lop' value='".$arr['lop']."'"."type='text'/>"; ?>
                   </div>
                   <div class="form-group" style="text-align: center; margin-bottom: 0px !important;">
-                    <input type="submit" class="btn btn-lg btn-success my-button" value="Sửa sinh viên">
+                    <input type="submit" class="btn btn-lg btn-success my-button" value="Save">
                     <input type="button" class="btn btn-lg my-button" value="Reset">
                   </div>
                 </fieldset>
@@ -66,5 +71,6 @@
         </div>
       </div>
     </div>
+
   </body>
 </html>

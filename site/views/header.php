@@ -38,54 +38,15 @@
           </div>
         </div>
       </div>
-
       <div class="col-md-3 text-right">
         <div id="log-in">
-
-          <a href="#" data-toggle="modal" data-target="#myModal">Đăng nhập</a>
-
+          <a href="login.php" style="float: left">Đăng nhập </a>
+          <p style="float: left; margin: auto 5px">|</p>
+          <a href="register.php" style="float: left"> Đăng ký</a>
         </div>
       </div>
     </div>
-
-
   </div>
-  <div class="_modal_">
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" role="dialog">
-      <div class="modal-dialog">
-        <!-- Modal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h5 class="modal-title" text-align="center" style="color: #ffffff">ĐĂNG NHẬP</h5>
-          </div>
-          <div class="modal-body">
-            <form action="/login" method="post">
-              <div class="form-group">
-                <label class="sr-only" for="exampleInputEmail3">Username</label>
-                <input type="text" class="form-control" id="exampleInputEmail3" placeholder="Email" name="username">
-              </div>
-
-              <div class="form-group">
-                <label class="sr-only" for="exampleInputPassword3">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword3" placeholder="Password" name="password">
-              </div>
-
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox"> Duy trì đăng nhập?
-                </label>
-              </div>
-              <button type="submit" class="btn btn-info">ĐĂNG NHẬP</button>
-            </form>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-
     <div class="container menu-nav">
       <ul class="topnav" id="myTopnav">
         <li><a href="http://localhost/BT-CNWEB/site/views/index.php">Trang chủ</a></li>

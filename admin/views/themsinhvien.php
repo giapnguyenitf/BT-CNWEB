@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<?php
+session_start();
+if(!isset($_SESSION['username'])){
+  header("Location:../../site/views/login.php");
+}
+ ?>
 <html>
   <head>
     <title>Thêm sinh viên</title>

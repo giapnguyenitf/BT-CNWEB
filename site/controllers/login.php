@@ -17,10 +17,11 @@ session_start();
         $username = addslashes($username);
 		    $password = strip_tags($password);
 		    $password = addslashes($password);
+        $en_pass = md5($password);
 
-        if(check_account($username,$password)){
+        if(check_account($username,$en_pass)){
           $_SESSION['username'] = $username;
-          header('Location:../views/index.php');
+          header('Location:../../admin/views/index.php');
         }else {
           header('Location:../views/login.php');
         }

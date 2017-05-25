@@ -12,8 +12,8 @@
 
       $username = $_POST['username'];
       $password = $_POST['password'];
-      $decen = 1;
-      if(add_account($username,$password,$decen)){
+      $en_pass=md5($password);
+      if(add_account($username,$en_pass)){
         header("Location:../views/login.php");
       }else{
         header("Location:../views/register.php");

@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<?php
+session_start();
+if(!isset($_SESSION['username'])){
+  header("Location:../../site/views/login.php");
+}
+ ?>
 <html>
   <head>
     <title>Thêm thực hiện đồ án</title>
@@ -6,6 +12,8 @@
   <body>
     <?php
     include 'share-layout.php';
+    include '../controllers/get_namesv.php';
+    include '../controllers/get_tendetai.php';
     ?>
     <div id="page-wrapper">
       <div class="row">
@@ -15,27 +23,27 @@
       </div>
       <!-- /.row -->
       <div class="row">
-        <div class="col-md-4 col-md-offset-4 my-input-form">
+        <div class="col-md-8 col-md-offset-2 my-input-form">
           <div class="login-panel panel panel-default">
             <div class="panel-body">
-              <form action="#" method="post">
+              <form action="../controllers/add_thda.php" method="post">
                 <fieldset>
                   <div class="form-group">
-                    <select class="form-control" id="TheLoai" name="TheLoai">
-                      <option value="">---Sinh viên---</option>
-                      <option>Huỳnh Hoàng Phúc</option>
-                      <option>Nguyễn Văn Giáp</option>
+                    <select class="form-control" id="idsv" name="idsv">
+                      <?php foreach ($arr as $item) {?>
+                        <option <?php echo "value='".$item['idsv']."'"; ?>><?php echo $item['hoten']; ?></option>
+                      <?php } ?>
                     </select>
-                  </div>
+                   </div>
                   <div class="form-group">
-                    <select class="form-control" id="TheLoai" name="TheLoai">
-                      <option value="">---Đề tài---</option>
-                      <option>Xây dựng ứng dụng gõ tắt</option>
-                      <option>Làm xe điều khiển từ xa</option>
+                    <select class="form-control" id="iddetai" name="iddetai">
+                      <?php foreach ($arr_dt as $item) {?>
+                        <option <?php echo "value='".$item['iddetai']."'"; ?>><?php echo $item['tendetai']; ?></option>
+                      <?php } ?>
                     </select>
                   </div>
                   <div class="form-group" style="text-align: center; margin-bottom: 0px !important;">
-                    <input type="submit" class="btn btn-lg btn-success my-button" value="Thêm thực hiện đồ án">
+                    <input type="submit" name="bt_submit" class="btn btn-lg btn-success my-button" value="Thêm thực hiện đồ án">
                     <input type="button" class="btn btn-lg my-button" value="Reset">
                   </div>
                 </fieldset>

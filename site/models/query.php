@@ -18,16 +18,14 @@ function check_account($username,$password){
   return $num_rows;
 }
 
-function add_account($username,$password,$dicen){
+function add_account($username,$password){
   global $conn;
   $sql = "INSERT INTO account(
 	    					username,
-	    					password,
-                decentralization
+	    					password
 	    					) VALUES (
 	    					'$username',
-	    					'$password',
-                $dicen
+	    					'$password'
 	    					)";
   $result = mysqli_query($conn,$sql);
   return $result;

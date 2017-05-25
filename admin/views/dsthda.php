@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<?php
+session_start();
+if(!isset($_SESSION['username'])){
+  header("Location:../../site/views/login.php");
+}
+ ?>
 <html>
   <head>
     <meta charset="utf-8">
@@ -7,58 +13,45 @@
   <body>
     <?php
     include 'share-layout.php';
+    include '../controllers/get_list_thda.php'
     ?>
     <div id="page-wrapper">
       <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-10">
           <h1 class="page-header">Danh sách thực hiện đồ án</h1>
+        </div>
+        <div class="col-md-2">
+          <button type="button" style="margin-top:20px;" class="btn btn-success my-button" onclick="window.location='themthda.php'">Thêm</button>
         </div>
       </div>
       <div class="row">
-        <table class="table table-hover my-table">
+        <table class="table table-bordered my-table">
+        <thead>
           <tr>
-            <th>
-              <p>ID thực hiện đồ án</p>
-            </th>
-            <th>
-              <p>Sinh viên</p>
-            </th>
-            <th>
-              <p>Đề tài</p>
-            </th>
-            <th>
-              <div class="checkbox">
-                <input type="checkbox">
-              </div>
-            </th>
+            <th>ID thực hiện đồ án</th>
+            <th>MSSV</th>
+            <th>Họ tên</th>
+            <th>ID Đề tài</th>
+            <th>Tên đề tài</th>
+            <th>Options</th>
           </tr>
+        </thead>
 
-          <tr>
-            <td>
-              1
-            </td>
-            <td>
-              Huỳnh Hoàng Phúc
-            </td>
-            <td>
-              Xây dựng ứng dụng gõ tắt
-            </td>
-            <td>
-              <div class="checkbox">
-                <input type="checkbox">
-              </div>
-            </td>
-          </tr>
+          <tbody>
+            <?php $i=1; foreach ($arr as $item) {?>
+            <form <?php echo "id="."form_".$i;?> method="get">
+              <tr>
+                <td><?php echo "<input readonly type='text' style='border:none;background:none;' name='idthda' value='".$item['idthda']."'>"; ?></td>
+                <td><?php echo "<input readonly type='text' style='border:none;background:none;' name='mssv' value='".$item['mssv']."'>"; ?></td>
+                <td><?php echo $item['hoten']; ?></td>
+                <td><?php echo $item['iddetai']; ?></td>
+                <td><?php echo $item['tendetai'];$i++; ?></td>
+                <?php  echo "<td><a href=\"suathda.php?idthda=$item[idthda]&mssv=$item[mssv]\"><i style='margin-left:10px;' class='fa fa-pencil' aria-hidden='true'></i></a><a href=\"../controllers/delete_thda.php?idthda=$item[idthda]\" onClick=\"return confirm('Are you sure you want to delete?')\"><i style='margin-left:10px;color:red;' class='fa fa-trash' aria-hidden='true'></i></a></td>"; ?>
+              </tr>
+            </form>
+          <?php } ?>
+          </tbody>
         </table>
-      </div>
-      <div class="row" style="text-align: center;">
-        <button type="button" class="btn btn-success my-button" onclick="window.location='themthda.php'">Thêm</button>
-        <form action="suathda.php" data-ajax="true" data-ajax-mode="replace" data-ajax-update="#divInterestDeatils" id="form0" method="post" style="display: inline-block">
-          <div id="divInterestDeatils"></div>
-          <input type="hidden" name="ma-phim" />
-          <button type="submit" class="btn btn-warning my-button">Sửa</button>
-        </form>
-        <button type="button" class="btn btn-danger my-button" data-toggle="modal" data-target="#xoaModal">Xoá</button>
       </div>
       <div class="modal fade" id="xoaModal" role="dialog">
         <div class="modal-dialog">

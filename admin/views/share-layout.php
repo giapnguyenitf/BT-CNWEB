@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<?php
+session_start();
+if(!isset($_SESSION['username'])){
+  header("Location:../../site/views/login.php");
+}
+ ?>
 <html>
   <head>
     <meta charset="utf-8">
@@ -37,7 +43,7 @@
 
       <ul class="nav navbar-top-links navbar-right">
         <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+          <!-- <a class="dropdown-toggle" data-toggle="dropdown" href="#">
             <i class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
           </a>
           <ul class="dropdown-menu dropdown-messages">
@@ -83,7 +89,7 @@
                 <i class="fa fa-angle-right"></i>
               </a>
             </li>
-          </ul>
+          </ul> -->
           <!-- /.dropdown-messages -->
         </li>
         <!-- /.dropdown -->
@@ -97,7 +103,7 @@
             <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
             </li>
             <li class="divider"></li>
-            <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+            <li><a href="../../site/views/login.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
             </li>
           </ul>
           <!-- /.dropdown-user -->

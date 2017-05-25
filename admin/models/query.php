@@ -116,4 +116,68 @@ require_once("connection.php");
     return $result;
 
   }
+
+  function get_list_thda(){
+    global $conn;
+    $sql = "SELECT thuchiendoan.idthda,thuchiendoan.mssv,sinhvien.hoten,thuchiendoan.iddetai,detai.tendetai FROM thuchiendoan,sinhvien,detai WHERE thuchiendoan.mssv=sinhvien.mssv AND thuchiendoan.iddetai=detai.iddetai";
+    $result = mysqli_query($conn,$sql);
+    mysqli_close($conn);
+
+    return $result;
+  }
+
+  function add_thda($idsv,$iddetai){
+    global $conn;
+    $sq = "SELECT mssv FROM sinhvien WHERE idsv=$idsv";
+    $r= mysqli_query($conn,$sq);
+    $arr=mysqli_fetch_array($r);
+    $mssv = $arr['mssv'];
+    $sql = "INSERT INTO thuchiendoan(mssv,iddetai) VALUES ('$mssv','$iddetai')";
+    $result =  mysqli_query($conn,$sql);
+
+    return $result;
+
+  }
+
+  function update_thda($idthda,$mssv,$iddetai){
+    global $conn;
+    $sql = "UPDATE thuchiendoan SET iddetai='$iddetai' WHERE idthda='$idthda'";
+    $result = mysqli_query($conn,$sql);
+    mysqli_close($conn);
+
+    return $result;
+  }
+
+  function delete_thda($idthda){
+    global $conn;
+    $sql = "DELETE FROM thuchiendoan  WHERE idthda=$idthda";
+    $result = mysqli_query($conn,$sql);
+    mysqli_close($conn);
+
+    return $result;
+  }
+
+  function get_namesv(){
+    global $conn;
+    $sql = "SELECT idsv,hoten FROM sinhvien";
+    $result = mysqli_query($conn,$sql);
+
+    return $result;
+  }
+
+  function get_tendetai(){
+    global $conn;
+    $sql = "SELECT iddetai,tendetai FROM detai";
+    $result = mysqli_query($conn,$sql);
+
+    return $result;
+  }
+
+  function get_info_sv_thda($mssv){
+    global $conn;
+    $sql= "SELECT mssv,hoten,lop FROM sinhvien WHERE mssv=$mssv";
+    $result = mysqli_query($conn,$sql);
+
+    return $result;
+  }
  ?>

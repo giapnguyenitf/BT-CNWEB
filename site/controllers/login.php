@@ -21,15 +21,6 @@ session_start();
 
         if(check_account($username,$en_pass)){
           $_SESSION['username'] = $username;
-
-          if(isset($_POST['remember_pass'])){
-            setcookie('username',$username,time()+60*60*24*7);
-            setcookie('password',$password,time()+60*60*24*7);
-          }else {
-            setcookie('username',$_POST['username'],time()-1);
-            setcookie('password',$_POST['password'],time()-1);
-          }
-
           header('Location:../../admin/views/index.php');
         }else {
 

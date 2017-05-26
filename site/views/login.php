@@ -14,6 +14,7 @@
   </head>
   <body>
 
+
     <div class="container">
       <div class="row">
         <div class="col-md-4 col-md-offset-4">
@@ -23,9 +24,9 @@
             </div>
             <div class="panel-body">
               <form class="form-group" action="../controllers/login.php" method="post">
-                <input class="form-control" id="username" type="text" name="username" value="" placeholder="Username.." required="Username is required">
-                <input class="form-control" id="password" type="password" name="password" value="" placeholder="Password.." required="Password is required!">
-                <input type="checkbox" name="remember_pass" id="remember_pass" value="1"> Nhớ mật khẩu?<br>
+                <input class="form-control" id="username" type="text" name="username" placeholder="Username.." required="Username is required">
+                <input class="form-control" id="password" type="password" name="password"  placeholder="Password.." required="Password is required!">
+                <input type="checkbox" name="remember" id="remember" value="1"> Nhớ mật khẩu?<br>
                 <input class="form-control btn btn-primary" type="submit" name="bt_submit" value="Login">
               </form>
             </div>

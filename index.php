@@ -13,7 +13,7 @@
       <div class="row _header_">
         <div class="col-md-4">
           <div class="logo">
-            <a href="http://localhost/BT-CNWEB/site/views/index.php"><img src="public/images/logo.png" alt="Project DUT" /></a>
+            <a href="index.php"><img src="public/images/logo.png" alt="Project DUT" /></a>
           </div>
         </div>
 
@@ -37,16 +37,16 @@
         </div>
         <div class="col-md-3 text-right">
           <div id="log-in">
-            <a href="login.php" style="float: left">Đăng nhập </a>
+            <a href="site/views/login.php" style="float: left">Đăng nhập </a>
             <p style="float: left; margin: auto 5px">|</p>
-            <a href="register.php" style="float: left"> Đăng ký</a>
+            <a href="site/views/register.php" style="float: left"> Đăng ký</a>
           </div>
         </div>
       </div>
     </div>
       <div class="container menu-nav">
         <ul class="topnav" id="myTopnav">
-          <li><a href="http://localhost/BT-CNWEB/site/views/index.php">Trang chủ</a></li>
+          <li><a href="index.php">Trang chủ</a></li>
           <li><a href="http://scv.udn.vn/dhdn/trdhbk">Giảng viên</a></li>
           <li><a href="https://www.facebook.com/groups/itfdut">Sinh viên</a></li>
           <li><a href="http://dut.udn.vn/Tintuc/Tintucds/gid/all">Tin tức</a></li>
@@ -233,7 +233,7 @@
         </div>
 
         <div class="col-md-3">
-          <div class="item1"><a href="site/views/updating.php"><img class="img-responsive" src="../../public/images/doc.png"></a></div>
+          <div class="item1"><a href="site/views/updating.php"><img class="img-responsive" src="public/images/doc.png"></a></div>
           <div class="item1-title doc-title"><p><a href="site/views/updating.php">Đồ án Truyền động thuỷ khí động lực</a></p></div>
         </div>
       </div>
@@ -241,7 +241,7 @@
     </div>
     <div class="container">
       <div class="category-header">
-        <h4 style="color: #14928e;text-decoration: none;"><img src="../../public/images/list.png">  DANH MỤC</h4>
+        <h4 style="color: #14928e;text-decoration: none;"><img src="public/images/list.png">  DANH MỤC</h4>
       </div>
       <div class="category">
         <div class="row">

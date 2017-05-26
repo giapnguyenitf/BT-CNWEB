@@ -19,11 +19,11 @@
               <h4 style="text-align:center">Register</h4>
             </div>
             <div class="panel-body">
-              <form class="form-group" name="register_form" action="../controllers/register.php" method="post">
+              <form class="form-group" name="register_form" action="../controllers/register.php"  method="post">
                 <input class="form-control" type="text" name="username" value="" placeholder="Username..">
-                <input class="form-control" type="password" name="password" value="" placeholder="Password..">
-                <input class="form-control" type="password" name="confirm_password" value="" placeholder="Confirm Password..">
-                <input class="form-control btn btn-primary" type="submit" name="bt_submit" value="Register">
+                <input class="form-control" type="password" id="password" name="password" value="" placeholder="Password..">
+                <input class="form-control" type="password" id="confirm_pass" name="confirm_password" value="" placeholder="Confirm Password..">
+                <input class="form-control btn btn-primary" onclick="return check_confirm_pass()" type="submit" name="bt_submit" value="Register">
               </form>
             </div>
             <div class="panel-footer">
@@ -34,6 +34,18 @@
       </div>
     </div>
 
+    <script type="text/javascript">
+      function check_confirm_pass(){
+        var $password = document.getElementById('password').value;
+        var $confirm_pass = document.getElementById('confirm_pass').value;
+        if($password==$confirm_pass){
+          return true;
+        }else {
+          alert('Confirm password not match password!');
+          return false;
+        }
+      }
+    </script>
     <script src="../../public/js/jquery-3.2.1.min.js"></script>
     <script src="../../public/js/bootstrap.min.js"></script>
   </body>

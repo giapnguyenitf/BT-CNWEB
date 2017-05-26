@@ -31,7 +31,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">QUẢN LÝ ĐỒ ÁN SV</a>
+        <a class="navbar-brand" href="../../index.php">QUẢN LÝ ĐỒ ÁN SV</a>
       </div>
       <!-- /.navbar-header -->
 
@@ -97,7 +97,7 @@
             <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
             </li>
             <li class="divider"></li>
-            <li><a href="../../site/views/login.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+            <li><a href="../controllers/log_out.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
             </li>
           </ul>
           <!-- /.dropdown-user -->

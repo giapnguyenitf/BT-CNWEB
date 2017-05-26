@@ -25,7 +25,7 @@
               <form class="form-group" action="../controllers/login.php" method="post">
                 <input class="form-control" id="username" type="text" name="username" value="" placeholder="Username.." required="Username is required">
                 <input class="form-control" id="password" type="password" name="password" value="" placeholder="Password.." required="Password is required!">
-                <input type="checkbox" name="remember_pass" value=""> Nhớ mật khẩu?<br>
+                <input type="checkbox" name="remember_pass" id="remember_pass" value="1"> Nhớ mật khẩu?<br>
                 <input class="form-control btn btn-primary" type="submit" name="bt_submit" value="Login">
               </form>
             </div>

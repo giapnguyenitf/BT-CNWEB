@@ -198,43 +198,43 @@
       <div class="row">
       </div><div class="row">
         <div class="col-md-3">
-          <div class="item1"><a href="site/views/updating.php"><img class="img-responsive" src="public/images/doc.png"></a></div>
-          <div class="item1-title doc-title"><p><a href="site/views/updating.php">Đồ án P.Tích & T.Kế H.Thống thông tin</a></p></div>
+          <div class="item1"><a href="site/views/read-doc.php?name=doanpt-tk-ht-tt.pdf"><img class="img-responsive" src="public/images/doc.png"></a></div>
+          <div class="item1-title doc-title"><p><a href="site/views/read-doc.php?name=doanpt-tk-ht-tt.pdf">Đồ án P.Tích & T.Kế H.Thống thông tin</a></p></div>
         </div>
 
         <div class="col-md-3">
-          <div class="item1"><a href="site/views/updating.php"><img class="img-responsive" src="public/images/doc.png"></a></div>
-          <div class="item1-title doc-title"><p><a href="site/views/updating.php">Đồ án Giải thuật & Lập trình</a></p></div>
+          <div class="item1"><a href="site/views/read-doc.php?name=doan-gt-lt.pdf"><img class="img-responsive" src="public/images/doc.png"></a></div>
+          <div class="item1-title doc-title"><p><a href="site/views/read-doc.php?name=doan-gt-lt.pdf">Đồ án Giải thuật & Lập trình</a></p></div>
         </div>
 
         <div class="col-md-3">
-          <div class="item1"><a href="site/views/updating.php"><img class="img-responsive" src="public/images/doc.png"></a></div>
-          <div class="item1-title doc-title"><p><a href="site/views/updating.php">Đồ án Lập trình HT & Vi điều khiển</a></p></div>
+          <div class="item1"><a href="site/views/read-doc.php?name=da-lt-ht-vdk.pdf"><img class="img-responsive" src="public/images/doc.png"></a></div>
+          <div class="item1-title doc-title"><p><a href="site/views/read-doc.php?name=da-lt-ht-vdk.pdf">Đồ án Lập trình HT & Vi điều khiển</a></p></div>
         </div>
 
         <div class="col-md-3">
-          <div class="item1"><a href="site/views/updating.php"><img class="img-responsive" src="public/images/doc.png"></a></div>
-          <div class="item1-title doc-title"><p><a href="site/views/updating.php">Đồ án Cơ sở ngành mạng</a></p></div>
+          <div class="item1"><a href="site/views/read-doc.php?name=do-an-cs-nm.pdf"><img class="img-responsive" src="public/images/doc.png"></a></div>
+          <div class="item1-title doc-title"><p><a href="site/views/read-doc.php?name=do-an-cs-nm.pdf">Đồ án Cơ sở ngành mạng</a></p></div>
         </div>
 
         <div class="col-md-3">
-          <div class="item1"><a href="site/views/updating.php"><img class="img-responsive" src="public/images/doc.png"></a></div>
-          <div class="item1-title doc-title"><p><a href="site/views/updating.php">Đồ án TK Hệ thống điện tử ô tô</a></p></div>
+          <div class="item1"><a href="site/views/read-doc.php?name=da-tk-ht-dt-oto.pdf"><img class="img-responsive" src="public/images/doc.png"></a></div>
+          <div class="item1-title doc-title"><p><a href="site/views/read-doc.php?name=da-tk-ht-dt-oto.pdf">Đồ án TK Hệ thống điện tử ô tô</a></p></div>
         </div>
 
         <div class="col-md-3">
-          <div class="item1"><a href="site/views/updating.php"><img class="img-responsive" src="public/images/doc.png"></a></div>
-          <div class="item1-title doc-title"><p><a href="site/views/updating.php">Đồ án Thiết kế ôtô</a></p></div>
+          <div class="item1"><a href="site/views/read-doc.php?name=da-tk-oto.pdf"><img class="img-responsive" src="public/images/doc.png"></a></div>
+          <div class="item1-title doc-title"><p><a href="site/views/read-doc.php?name=da-tk-oto.pdf">Đồ án Thiết kế ôtô</a></p></div>
         </div>
 
         <div class="col-md-3">
-          <div class="item1"><a href="site/views/updating.php"><img class="img-responsive" src="public/images/doc.png"></a></div>
-          <div class="item1-title doc-title"><p><a href="site/views/updating.php">Đồ án Thiết kế Động cơ đốt trong</a></p></div>
+          <div class="item1"><a href="site/views/read-doc.php?name=do-an-thiet-ke-dong-co-dot-trong.pdf"><img class="img-responsive" src="public/images/doc.png"></a></div>
+          <div class="item1-title doc-title"><p><a href="site/views/read-doc.php?name=do-an-thiet-ke-dong-co-dot-trong.pdf">Đồ án Thiết kế Động cơ đốt trong</a></p></div>
         </div>
 
         <div class="col-md-3">
-          <div class="item1"><a href="site/views/updating.php"><img class="img-responsive" src="public/images/doc.png"></a></div>
-          <div class="item1-title doc-title"><p><a href="site/views/updating.php">Đồ án Truyền động thuỷ khí động lực</a></p></div>
+          <div class="item1"><a href="site/views/read-doc.php?name=do-an-truyen-dong-thuy-khi-dong-luc.pdf"><img class="img-responsive" src="public/images/doc.png"></a></div>
+          <div class="item1-title doc-title"><p><a href="site/views/read-doc.php?name=do-an-truyen-dong-thuy-khi-dong-luc.pdf">Đồ án Truyền động thuỷ khí động lực</a></p></div>
         </div>
       </div>
 

@@ -1,5 +1,10 @@
 <!DOCTYPE html>
-
+<?php
+session_start();
+if(!isset($_SESSION['username'])){
+  header("Location:../../site/views/login.php");
+}
+ ?>
 <html>
   <head>
     <meta charset="utf-8">

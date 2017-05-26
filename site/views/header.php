@@ -49,7 +49,7 @@
   </div>
     <div class="container menu-nav">
       <ul class="topnav" id="myTopnav">
-        <li><a href="index.php">Trang chủ</a></li>
+        <li><a href="../../index.php">Trang chủ</a></li>
         <li><a href="http://scv.udn.vn/dhdn/trdhbk">Giảng viên</a></li>
         <li><a href="https://www.facebook.com/groups/itfdut">Sinh viên</a></li>
         <li><a href="http://dut.udn.vn/Tintuc/Tintucds/gid/all">Tin tức</a></li>

@@ -13,13 +13,6 @@ if(isset($_POST['bt_submit'])){
   }else {
     $gioitinh =false;
   }
-  echo $mssv;
-  echo $hoten;
-  echo $gioitinh;
-  echo $ngaysinh;
-  echo $email;
-  echo $sdt;
-  echo $lop;
 
   $result = add_sv($mssv,$hoten,$gioitinh,$ngaysinh,$email,$sdt,$lop);
   if($result){

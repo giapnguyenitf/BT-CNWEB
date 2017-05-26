@@ -10,9 +10,9 @@
   <div class="container news-box-container">
     <div class="row">
       <div class="col-md-8">
-        <div class="r-title">
-          <h2>UPDATING...</h2>
-        </div>
+          <div class="">
+            <iframe src="../../upload/test.pdf" width="780px" height="600px"></iframe>
+          </div>
           <div class="fb-comments" data-numposts="20" width="100%" data-colorscheme="light" data-version="v2.3"></div>
       </div>
       <div class="col-md-4">
